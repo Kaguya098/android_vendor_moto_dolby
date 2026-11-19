@@ -173,7 +173,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libstagefright_foundation_dolby",
-    stem: "libstagefright_foundation",
+    stem: "libstagefright_foundation_dolby",
     owner: "dolby",
     strip: { none: true },
     check_elf_files: false,
@@ -187,7 +187,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libsqlite_dolby",
-    stem: "libsqlite",
+    stem: "libsqlite_dolby",
     owner: "dolby",
     strip: { none: true },
     check_elf_files: false,
@@ -198,3 +198,15 @@ cc_prebuilt_library_shared {
     },
 }
 
+
+cc_prebuilt_binary {
+    name: "vendor.dolby.hardware.dms@2.0-service",
+    owner: "dolby",
+    strip: { none: true },
+    check_elf_files: false,
+    soc_specific: true,
+    relative_install_path: "hw",
+    compile_multilib: "64",
+    srcs: ["proprietary/vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service"],
+    init_rc: ["proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc"],
+}
